@@ -12,3 +12,21 @@
 ## FFMpeg
 
 ### FFplay
+
+## Layout of project
+
+### Folder Architecture
+## Model
+    - Models
+        - MediaItemBase.cs
+        - 
+## Media
+    - Media/Audio
+    - Media/Video
+## Services
+    - 
+## Interfaces
+    - 
+## Context
+    - database.json
+    - Database.cs
