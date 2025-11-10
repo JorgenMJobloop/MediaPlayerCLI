@@ -4,6 +4,14 @@ class Program
 {
     static void Main(string[] args)
     {
+        GuidExample example = new GuidExample();
+
+        example.guid = Guid.NewGuid();
+        Console.WriteLine($"Globally Unique Identifier: {example.guid}");
+    }
+
+    static void RunProgram()
+    {
         PlayerService player = new PlayerService();
         MediaLibrary library = new MediaLibrary(player);
 
