@@ -3,8 +3,6 @@
 
 # Create a CLI media player
 
-## 
-
 # Depencies
 
 ## Spectre.Console
@@ -30,3 +28,4 @@
 ## Context
     - database.json
     - Database.cs
+![alt text](image.png)
