@@ -10,6 +10,9 @@ class Program
         Console.WriteLine($"Globally Unique Identifier: {example.guid}");
     }
 
+    /// <summary>
+    /// Run our main program seperately, since we are opening up a second process.
+    /// </summary>
     static void RunProgram()
     {
         PlayerService player = new PlayerService();
