@@ -40,4 +40,11 @@ public class MediaLibrary
 
         item.Play(_player);
     }
+
+    public void ScanAndAddItemsToLibrary(string filePath, bool isVideo)
+    {
+        var title = Path.GetFileNameWithoutExtension(filePath);
+        MediaItemBase item = isVideo ? new VideoItem(title, filePath) : new AudioItem(title, filePath);
+        AddItem(item);
+    }
 }

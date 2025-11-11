@@ -2,15 +2,23 @@
 
 class Program
 {
-    static void Main(string[] args)
+    static async Task Main(string[] args)
     {
         GuidExample example = new GuidExample();
 
         example.guid = Guid.NewGuid();
         Console.WriteLine($"Globally Unique Identifier: {example.guid}");
 
-        Console.WriteLine("");
+        Console.WriteLine("Running CLI");
+
+        // Current working implementation
         RunProgram();
+        // todo: implement a database loader/library loader
+        /*
+        CLI cli = new CLI();
+
+        await cli.RunCLI();
+        */
     }
 
     /// <summary>
