@@ -8,6 +8,9 @@ class Program
 
         example.guid = Guid.NewGuid();
         Console.WriteLine($"Globally Unique Identifier: {example.guid}");
+
+        Console.WriteLine("");
+        RunProgram();
     }
 
     /// <summary>

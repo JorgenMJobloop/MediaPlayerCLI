@@ -5,6 +5,11 @@
 
 # dotenv files
 .env
+*.mkv
+Audio/
+.mkv
+.wav
+
 
 # User-specific files
 *.rsuser
