@@ -30,6 +30,8 @@ public class CLI
                     ShowLibrary(library);
                     break;
                 case "Save to library":
+                    AddMediaToLibrary(library);
+                    repository.Save(library);
                     break;
                 case "Exit":
                     return;
@@ -52,8 +54,8 @@ public class CLI
 
         foreach (var media in library.GetAllItems())
         {
-            var artist = string.IsNullOrWhiteSpace(media.Artist) ? "[grey]Unknown[/]" : media.Artist;
-            var duration = media.Duration?.ToString(@"mm\:ss") ?? "[grey]?[/]";
+            var artist = string.IsNullOrWhiteSpace(media.Artist) ? "Unknown" : media.Artist;
+            var duration = media.Duration?.ToString(@"mm\:ss") ?? "?";
             table.AddRow(media.Title!, artist, duration, media.GetType().Name);
         }
 
@@ -87,7 +89,7 @@ public class CLI
         var selectedItems = AnsiConsole.Prompt(
             new SelectionPrompt<AudioItem>()
                 .Title("Choose a [cyan]song[/] to play:")
-                .UseConverter(audio => $"{audio.Title} - {audio.Artist} ({audio.Duration?.ToString(@"mm:\ss") ?? "?"})")
+                .UseConverter(audio => $"{audio.Title} - {audio.Artist} ({audio.Duration?.ToString(@"mm\:ss") ?? "?"})")
                 .AddChoices(getAudioFiles)
         );
 

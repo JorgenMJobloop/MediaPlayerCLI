@@ -11,14 +11,19 @@ class Program
 
         Console.WriteLine("Running CLI");
 
+        Console.WriteLine("Loading library...");
+        Thread.Sleep(1000);
+
+        
+
         // Current working implementation
-        RunProgram();
+        //RunProgram();
         // todo: implement a database loader/library loader
-        /*
+        
         CLI cli = new CLI();
 
         await cli.RunCLI();
-        */
+        
     }
 
     /// <summary>
@@ -27,10 +32,10 @@ class Program
     static void RunProgram()
     {
         PlayerService player = new PlayerService();
-        MediaLibrary library = new MediaLibrary(player);
+        MediaLibrary library = new MediaLibrary();
 
         // composition - the library owns the player instance object and the media file elements
-        library.AddItem(new AudioItem("Daft Punk - Fresh", "Media/Audio/fresh.wav"));
+        library.AddItem(new AudioItem("Ain't no stopping us now", "Media/Audio/Song1.mp3"));
 
         Console.WriteLine("Playing media file");
         foreach (var media in library.GetAllItems())

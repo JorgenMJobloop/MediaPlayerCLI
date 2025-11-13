@@ -3,12 +3,7 @@ public class MediaLibrary
     // scoping & visibility
     // composition
     private readonly List<MediaItemBase> _items = new List<MediaItemBase>();
-    private readonly IPlayerService _player;
-
-    public MediaLibrary(IPlayerService player)
-    {
-        _player = player;
-    }
+    private readonly IPlayerService? _player;
 
     public void AddItem(MediaItemBase item)
     {
@@ -38,7 +33,7 @@ public class MediaLibrary
             return;
         }
 
-        item.Play(_player);
+        item.Play(_player!);
     }
 
     public void ScanAndAddItemsToLibrary(string filePath, bool isVideo)
